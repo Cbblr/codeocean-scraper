@@ -3,7 +3,7 @@ package io.github.codeocean_scraper
 import org.jsoup.Jsoup
 import java.net.URL
 
-private val cookieName = "_hands-on-programming_session"
+private val cookieName = "_code_ocean_session"
 
 class PageFetcher(val sessionKey: String) {
     fun fetch(url: String)

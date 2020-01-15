@@ -20,6 +20,7 @@ private val HEADER_TEMPLATE = """//
 //
 
 """
+ private val FILE_SUFFIX = "java"
 
 private fun parseSubmissions(
         dataNode: Element,
@@ -121,7 +122,7 @@ private fun saveFiles(
         }
 
         for (file in files) {
-            val fileName = "${file.name}$postfix.java"
+            val fileName = "${file.name}$postfix.$FILE_SUFFIX"
             val filePath = dir.resolve(fileName)
             filePath.toFile().writeText(header + file.content)
         }

@@ -23,7 +23,7 @@ private fun login(baseUrl: URL, email: String, password: String): String {
                              .data(formData)
                              .cookies(pageResponse.cookies())
                              .execute()
-    return loginResponse.cookie("_hands-on-programming_session")
+    return loginResponse.cookie("_code_ocean_session")
 }
 
 fun interactiveLogin(baseUrl: URL): String {
