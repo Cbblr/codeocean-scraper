@@ -20,7 +20,6 @@ private val HEADER_TEMPLATE = """//
 //
 
 """
-// private val FILE_SUFFIX = "java"
 
 private fun parseSubmissions(
         dataNode: Element,

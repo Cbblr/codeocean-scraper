@@ -1,5 +1,5 @@
 # Custom
-
+bin/
 .idea
 
 # Created by https://www.gitignore.io/api/gradle,intellij,java,linux,osx,sublimetext,vim,windows,linux
@@ -73,7 +73,8 @@ fabric.properties
 .LSOverride
 
 # Icon must end with two \r
-Icon
+Icon
+
 
 # Thumbnails
 ._*
