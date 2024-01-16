@@ -1,4 +1,5 @@
 # codeocean-scraper
+
 Batch download student submission from codeocean
 
 ## Setup
@@ -10,13 +11,15 @@ Batch download student submission from codeocean
 
 ## Running
 
-Execute `java -jar path/to/jar exerciseUrl targetDirectory deadline`
+Execute `java -jar path/to/jar exerciseUrl targetDirectory deadline filesuffix`
 
 Parameter explanation:
-- *exerciseUrl:* URL to the statistics page of the exercise you want to download.
+
+- _exerciseUrl:_ URL to the statistics page of the exercise you want to download.
   Should have the format `https://codeocean.url/exercises/<someId>/statistics`.
-- *targetDirectory:* All downloaded submissions will be saved under this directory. The directory must already exist.
-- *deadline:* The deadline of the exercise, if a submission was made after the deadline, a file called `DEADLINE_EXCEEDED` will be created in the output directory. Must be of the form `YYYY-MM-DDThh:mm+tz:tz` (in other words, an ISO 8601 date & time, as accepted by `java.time.OffsetDateTime.parse`).
+- _targetDirectory:_ All downloaded submissions will be saved under this directory. The directory must already exist.
+- _deadline:_ The deadline of the exercise, if a submission was made after the deadline, a file called `DEADLINE_EXCEEDED` will be created in the output directory. Must be of the form `YYYY-MM-DDThh:mm+tz:tz` (in other words, an ISO 8601 date & time, as accepted by `java.time.OffsetDateTime.parse`).
+- _filesuffix:_ All downloaded submissions will have the provided filesuffix. For example `py` for `example_submission.py`.
 
 ### Authentication
 
@@ -43,4 +46,4 @@ All `*.java` files will also contain an initial comment with the url to the subm
 
 ### Multi file mode
 
-If more than one file are associated with the  exercise, the student directories may contain one or more subdirectories labeled `SUBMIT`, `ASSESSED AFTER SUBMIT`, `ASSESSED ONLY`, `NO ASSESS OR SUBMIT` or `TOP SCORE`. The meanings are the same as described above with `SUBMIT` being equivalent to no suffix (`name.java`). In this mode the metadata (url and score) will be placed in files called `url.txt` and `score.txt` withing the different subdirectories.
+If more than one file are associated with the exercise, the student directories may contain one or more subdirectories labeled `SUBMIT`, `ASSESSED AFTER SUBMIT`, `ASSESSED ONLY`, `NO ASSESS OR SUBMIT` or `TOP SCORE`. The meanings are the same as described above with `SUBMIT` being equivalent to no suffix (`name.java`). In this mode the metadata (url and score) will be placed in files called `url.txt` and `score.txt` withing the different subdirectories.
